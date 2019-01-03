@@ -13,6 +13,9 @@ class homeController extends controller {
         $this->loadTemplate('home', $data);
     }
     
+    
+    
+    //Deve ser enviado para um model e chama-lo no controller
     public function criar_slug($text) {
         
         $replace = [
@@ -70,6 +73,20 @@ class homeController extends controller {
         $text = strtolower($text);
         
         return $text;
-    }    
+    }  
+    
+    //Outro tipo de slog mais simples
+    function SlugURL($str){
+        $str = strtolower(utf8_decode($str)); $i=1;
+        $str = strtr($str, utf8_decode('àáâãäåæçèéêëìíîïñòóôõöøùúûýýÿ'), 'aaaaaaaceeeeiiiinoooooouuuyyy');
+        $str = preg_replace("/([^a-z0-9])/",'-',utf8_encode($str));
+        while($i>0) $str = str_replace('--','-',$str,$i);
+        if (substr($str, -1) == '-') $str = substr($str, 0, -1);
+        return $str;
+    }
+    
+    //Como chamar
+   // $texto = "Sua mensagem";
+   // echo SlugURL($texto);
     
 }

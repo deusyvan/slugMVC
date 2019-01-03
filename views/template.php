@@ -9,6 +9,10 @@
 	</head>
 	
 	<body>
+		<h1>Fotografias Fulano</h1>
+		<a href="<?php echo BASE_URL; ?>home">Home</a>
+		<a href="<?php echo BASE_URL; ?>galeria">Galeria</a>
+		<hr/>
 		<?php $this->loadViewInTemplate($viewName, $viewData); ?>
 		<script type="text/javascript">var BASE_URL = '<?php echo BASE_URL; ?>';</script>
 		<script type="text/javascript" src="<?php echo BASE_URL; ?>assets/js/bootstrap.min.js" ></script>
