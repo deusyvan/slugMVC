@@ -1,4 +1,4 @@
-<?php
+<?php 
 class galeriaController extends controller {
     
     public function __construct() {
@@ -15,10 +15,10 @@ class galeriaController extends controller {
         $this->loadTemplate('galeria', $data);
     }
     
-    public function abrir($id) {
+    public function abrir($slug) {
         $albuns = new Albuns();
         $data = array(
-            'info' => $albuns->getAlbum($id)
+            'info' => $albuns->getAlbum($slug)
         );
         
         $this->loadTemplate('album', $data);

@@ -13,12 +13,12 @@ class  Albuns extends model{
         return $array;
     }
     
-    public function getAlbum($id){
+    public function getAlbum($slug){
         $array = array();
         
-        $sql = "SELECT * FROM albuns WHERE id = :id";
+        $sql = "SELECT * FROM albuns WHERE slug = :slug";
         $sql = $this->db->prepare($sql);
-        $sql->bindValue(":id", $id);
+        $sql->bindValue(":slug", $slug);
         $sql->execute();
         
         if($sql->rowCount() > 0){
